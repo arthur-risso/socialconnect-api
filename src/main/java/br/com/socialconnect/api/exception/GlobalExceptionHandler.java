@@ -66,6 +66,22 @@ public class GlobalExceptionHandler {
                 mensagem("cpf.duplicado", ex.getCpf()), request, List.of());
     }
 
+    // 409 - nome de produto duplicado
+    @ExceptionHandler(NomeProdutoDuplicadoException.class)
+    public ResponseEntity<ProblemDetail> handleNomeProdutoDuplicado(NomeProdutoDuplicadoException ex,
+                                                                    WebRequest request) {
+        return build(HttpStatus.CONFLICT, "produto-duplicado", "Produto já cadastrado",
+                mensagem("produto.nome.duplicado", ex.getNome()), request, List.of());
+    }
+
+    // 422 - regra de negócio: estoque não pode ficar negativo
+    @ExceptionHandler(EstoqueNegativoException.class)
+    public ResponseEntity<ProblemDetail> handleEstoqueNegativo(EstoqueNegativoException ex, WebRequest request) {
+        return build(HttpStatus.UNPROCESSABLE_CONTENT, "estoque-negativo", "Estoque negativo",
+                mensagem("produto.estoque.negativo", ex.getEstoque()), request,
+                List.of(new ProblemDetail.FieldError("estoqueAtual", mensagem("produto.estoque.minimo"))));
+    }
+
     // 404 - recurso não encontrado
     @ExceptionHandler(RecursoNaoEncontradoException.class)
     public ResponseEntity<ProblemDetail> handleNaoEncontrado(RecursoNaoEncontradoException ex, WebRequest request) {
