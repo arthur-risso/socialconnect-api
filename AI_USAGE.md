@@ -18,24 +18,35 @@ Para cada aula ou entrega, registre abaixo:
 
 | Data | Aula | Ferramenta | Prompt (resumo) | Uso da saída |
 |------|------|------------|-----------------|--------------|
-| 04/09/2026 | Aula 03 | Claude | "Preencha o modelo de pull request (`.github/pull_request_template.md`) com as mudanças desta entrega" | Descrição do PR `.github/pull-requests/PR-aula-03.md` gerada integralmente pelo Claude a partir das mudanças da entrega; revisada por mim. |
-| 04/09/2026 | Aula 04 | Claude | "Gere 3 exemplos de JSONs válidos do recurso Beneficiario com nomes e CPFs fictícios para testar a rota POST no Swagger." | Copiado integralmente e colado na interface do Swagger UI para testar o salvamento no banco de dados. |
-| 04/09/2026 | Aula 04 | Claude | "Organize minhas respostas da atividade em um arquivo Markdown bem estruturado" | Usado para a modelagem e estilização do `atividade-aula-04.md`: a IA pegou as minhas respostas da atividade e criou o arquivo `.md` (títulos, tabelas, checklist e blocos de código). |
-| 04/09/2026 | Aula 04 | Claude | "Preencha o modelo de pull request (`.github/pull_request_template.md`) com as mudanças desta entrega" | Descrição do PR `.github/pull-requests/PR-aula-04.md` gerada integralmente pelo Claude a partir das mudanças da entrega; revisada por mim. |
-| 11/09/2026 | Aula 05 | Claude | "Como é a anotação para definir o valor padrão e tamanho da página no Pageable do Controller" | Usado para relembrar a sintaxe da anotação `@PageableDefault(size = 10, sort = "nome")` |
-| 11/09/2026 | Aula 05 | Claude | "Como é a sintaxe do Java Record para instanciar um DTO a partir de uma Entity usando o construtor?" | Usado como referência do trecho de código para fazer o mapeamento manual `new BeneficiarioResponseDTO(...)` |
-| 11/09/2026 | Aula 05 | Claude | "Preencha o modelo de pull request (`.github/pull_request_template.md`) com as mudanças desta entrega" | Descrição do PR `.github/pull-requests/PR-aula-05.md` gerada integralmente pelo Claude a partir das mudanças da entrega; revisada por mim. |
-| 14/09/2026 | Aula 06 | Claude | "Por que a minha validação @NotBlank não está disparando no Controller mesmo com as anotações no DTO?" | Usado para diagnosticar o erro e lembrar de adicionar a anotação `@Valid` antes do `@RequestBody` na assinatura do método. |
-| 14/09/2026 | Aula 06 | Claude | "Como usar o springDoc" | Usado para entender documentação. |
-| 14/09/2026 | Aula 06 | Claude | "Organize minhas respostas da atividade em um arquivo Markdown bem estruturado" | Usado para a modelagem e estilização do `atividade-aula-06.md`: a IA pegou as minhas respostas da atividade e criou o arquivo `.md` (títulos, tabelas, checklist e blocos de código). |
-| 14/09/2026 | Aula 06 | Claude | "Preencha o modelo de pull request (`.github/pull_request_template.md`) com as mudanças desta entrega" | Descrição do PR `.github/pull-requests/PR-aula-06.md` gerada integralmente pelo Claude a partir das mudanças da entrega; revisada por mim. |
-| 25/09/2026 | Aula 07 | Claude | "Como funciona a anotação @Testcontainers e a declaração estática do PostgreSQLContainer no JUnit 5?" | Usado como referência para compreender o ciclo de vida do contentor Docker durante a execução dos teste. |
-| 25/09/2026 | Aula 07 | ChatGPT | "Tenho a lógica do teste pronta, mas estou na dúvida em qual bloco (Arrange ou Act) deve ficar a chamada do assertThrows para exceções. Como estruturar?" | Usado para entender como aplicar o padrão AAA corretamente quando o teste espera que uma exceção seja lançada. |
-| 25/09/2026 | Aula 07 | Claude | "Como posso usar o Mockito.verify() no bloco ASSERT para garantir que o método save() do repositório foi chamado exatamente 1 vez?" | Adaptado para estruturar a verificação de comportamento dos mocks na etapa de Assert. |
-| 25/09/2026 | Aula 07 | Claude | "Organize minhas respostas da atividade em um arquivo Markdown bem estruturado" | Usado para a modelagem e estilização do `atividade-aula-07.md`: a IA pegou as minhas respostas da atividade e criou o arquivo `.md` (títulos, tabelas, checklist e blocos de código). |
-| 25/09/2026 | Aula 07 | Claude | "Preencha o modelo de pull request (`.github/pull_request_template.md`) com as mudanças desta entrega" | Descrição do PR `.github/pull-requests/PR-aula-07.md` gerada integralmente pelo Claude a partir das mudanças da entrega; revisada por mim. |
-| 25/09/2026 | Correção GET beneficiários (pós Aula 07) | Claude | "O professor mandou uma correção da busca por beneficiários (GET) pelo Swagger, não entendi o que significa" | Usado para entender o problema do `Pageable` no Swagger UI e o código enviado pelo professor. A aplicação do código do professor e o tratamento 400 para ordenação por campo inexistente também foram feitos com o Claude e revisados por mim. |
-| 25/09/2026 | Correção GET beneficiários (pós Aula 07) | Claude | "Preencha o modelo de pull request (`.github/pull_request_template.md`) com as mudanças desta entrega" | Descrição do PR `.github/pull-requests/PR-fix-busca-beneficiarios-swagger.md` gerada integralmente pelo Claude a partir das mudanças da entrega; revisada por mim. |
+| 02/10/2026 | Avaliação 1 (Produtos) | Claude | "Analise o projeto e a atividade proposta no arquivo `avaliacao1.html` e descreva as implementações que deseja fazer e o porquê de cada uma" | Usado como plano de trabalho. A IA apontou o conflito entre o `@Min(0)` do DTO de exemplo (que gera 400) e a regra de estoque negativo (que exige 422); decidi manter a regra no service para retornar 422. |
+| 02/10/2026 | Avaliação A1 (Produtos) | Claude | "Altere o necessário para que retorne 422" (implementação do módulo de produtos) | Código do módulo `produtos` (Entity, migration V4, DTOs, `@UnidadeMedidaValida`, Service, Controller, handlers 409/422), testes `ProdutoServiceTest` e `ProdutoControllerIntegrationTest` e atualização do README gerados pelo Claude seguindo os padrões já existentes no projeto (módulo de doações); revisados e testados por mim (Swagger e `mvn test`). Commits feitos por mim. |
+| 02/10/2026 | Avaliação A1 (Produtos) | Claude | "Os Conventional Commits são os commits padrões já utilizados?" | Usado como referência: explicação do formato `tipo(escopo): descrição` e sugestão de divisão dos commits por etapa (entidade, DTOs, service, controller, testes, docs). Os comandos `git add`/`git commit` foram executados por mim. |
+| 02/10/2026 | Avaliação A1 (Produtos) | Claude | "Realize os testes do desafio bônus e traga os resultados." | A IA confirmou os testes do bônus e os executou com o Docker ativo: `ProdutoServiceTest` (3/3) e `ProdutoControllerIntegrationTest` com PostgreSQL 17 via Testcontainers (3/3), todos passando. |
+
+### Declaração de Uso de IA (A1)
+
+**Ferramentas utilizadas:**
+- [x] Claude (Claude Code)
+- [ ] Copilot / Codeium
+- [ ] Nenhuma
+
+**Como utilizei:**
+- Usei IA para analisar o enunciado e planejar as implementações.
+- Usei IA para gerar o módulo de produtos seguindo o padrão do módulo de doações.
+- Usei IA para gerar os testes unitários e de integração no padrão AAA.
+- Usei IA para entender o padrão Conventional Commits e organizar meus commits.
+- Usei IA para executar e validar os testes do bônus (unitários e de integração com Testcontainers).
+
+**O que eu entendo 100%:**
+- A criação dos CRUDs
+- Os status HTTP do CRUD
+- Entidade e migration
+- O campo estoqueBaixo
+
+**O que precisei estudar mais:**
+- Por que estoque negativo dá 422 e não 400
+- Nome único no PUT
+- Testes de integração com Testcontainers
 
 ---
 
