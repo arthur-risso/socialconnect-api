@@ -36,6 +36,26 @@ Para cada aula ou entrega, registre abaixo:
 | 25/09/2026 | Aula 07 | Claude | "Preencha o modelo de pull request (`.github/pull_request_template.md`) com as mudanças desta entrega" | Descrição do PR `.github/pull-requests/PR-aula-07.md` gerada integralmente pelo Claude a partir das mudanças da entrega; revisada por mim. |
 | 25/09/2026 | Correção GET beneficiários (pós Aula 07) | Claude | "O professor mandou uma correção da busca por beneficiários (GET) pelo Swagger, não entendi o que significa" | Usado para entender o problema do `Pageable` no Swagger UI e o código enviado pelo professor. A aplicação do código do professor e o tratamento 400 para ordenação por campo inexistente também foram feitos com o Claude e revisados por mim. |
 | 25/09/2026 | Correção GET beneficiários (pós Aula 07) | Claude | "Preencha o modelo de pull request (`.github/pull_request_template.md`) com as mudanças desta entrega" | Descrição do PR `.github/pull-requests/PR-fix-busca-beneficiarios-swagger.md` gerada integralmente pelo Claude a partir das mudanças da entrega; revisada por mim. |
+| 02/10/2026 | Avaliação A1 (Produtos) | Claude (Claude Code) | "Analise o projeto e a atividade proposta no arquivo `avaliacao1.html` e descreva as implementações que deseja fazer e o porquê de cada uma" | Usado como plano de trabalho. A IA apontou o conflito entre o `@Min(0)` do DTO de exemplo (que gera 400) e a regra de estoque negativo (que exige 422); decidi manter a regra no service para retornar 422. |
+| 02/10/2026 | Avaliação A1 (Produtos) | Claude (Claude Code) | "Altere o necessário para que retorne 422" (implementação do módulo de produtos) | Código do módulo `produtos` (Entity, migration V4, DTOs, `@UnidadeMedidaValida`, Service, Controller, handlers 409/422), testes `ProdutoServiceTest` e `ProdutoControllerIntegrationTest` e atualização do README gerados pelo Claude seguindo os padrões já existentes no projeto (módulo de doações); revisados e testados por mim (Swagger e `mvn test`). Commits feitos por mim. |
+
+### Declaração de Uso de IA (A1)
+
+**Ferramentas utilizadas:**
+- [x] Claude (Claude Code)
+- [ ] Copilot / Codeium
+- [ ] Nenhuma
+
+**Como utilizei:**
+- Usei IA para analisar o enunciado e planejar as implementações.
+- Usei IA para gerar o módulo de produtos seguindo o padrão do módulo de doações.
+- Usei IA para gerar os testes unitários e de integração no padrão AAA.
+
+**O que eu entendo 100%:**
+- _(preencher)_
+
+**O que precisei estudar mais:**
+- _(preencher)_
 
 ---
 
